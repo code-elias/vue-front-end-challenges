@@ -1,4 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -19,6 +21,21 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  /* FONTS */
+  --fw-1: 100;
+  --fw-2: 200;
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
+
+  --fs-1: 0.5rem;
+  --fs-2: 0.8rem;
+  --fs-3: 1rem;
+  --fs-4: 1.2rem;
+  --fs-5: 1.5rem;
 }
 
 /* semantic color variables for this project */
@@ -34,6 +51,11 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+
+  /* FONT DEFAULTS */
+  --ff-default: "Josefin Sans";
+  --fw-default: var(--fw-4);
+  --fs-default: var(--fs-3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,23 +72,19 @@
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  font-weight: normal;
-}
-
 body {
+  /* GENERIC */
   min-height: 100vh;
-  color: var(--color-text);
   background: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
+
+  /* Text */
+  color: var(--color-text);
   line-height: 1.6;
   font-family:
+    var(--ff-default),
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -79,7 +97,8 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
+  font-size: var(--fs-default);
+  font-weight: var(--fw-default);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

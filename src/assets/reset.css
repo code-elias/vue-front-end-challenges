@@ -18,11 +18,12 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+/* 
 body {
   min-height: 100vh;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
-}
+} */
 
 /* Remove default margin in favour of better control in authored CSS */
 body,

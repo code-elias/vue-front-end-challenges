@@ -5,12 +5,14 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <div class="header">
+      <!-- <HelloWorld msg="You did it!" /> -->
+      <div class="header-title">
+        <h1 class="title">FrontEnd Mentor Challenges</h1>
+        <p class="subtitle">by Elias Golam</p>
+      </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
+      <nav class="navbar">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/test">Test</RouterLink>
@@ -22,65 +24,33 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+
+  padding: 1rem 2rem 1rem 2rem;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.title {
+  font-size: var(--fs-5);
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.subtitle {
+  font-size: var(--fs-2);
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.header-title {
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.navbar {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  gap: 0.5rem;
+  font-size: var(--ff-4);
 }
 </style>
