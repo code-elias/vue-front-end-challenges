@@ -58,6 +58,7 @@
   --fs-default: var(--fs-3);
 }
 
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -70,7 +71,7 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
-}
+} */
 
 body {
   /* GENERIC */

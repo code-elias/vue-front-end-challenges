@@ -10,3 +10,18 @@
   display: flex;
   justify-content: center; */
 }
+
+.test {
+  background-color: rgb(255, 0, 0, .3);
+  border: 1px solid rgb(255, 0, 0, .5);
+}
+
+.main {
+  padding: 1.3rem 2rem 1.3rem 2rem;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
