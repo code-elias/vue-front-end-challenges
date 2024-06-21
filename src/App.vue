@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, createRouter } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import MainNavbar from './components/MainNavbar.vue'
 </script>
 
 <template>
@@ -13,11 +14,11 @@ import HelloWorld from './components/HelloWorld.vue'
           <p class="subtitle">by Elias Golam</p>
         </div>
 
-        <nav class="navbar">
+        <MainNavbar />
+        <!-- <nav class="navbar">
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
-          <!-- <RouterLink to="/test">Test</RouterLink> -->
-        </nav>
+        </nav> -->
       </div>
     </header>
 
@@ -35,10 +36,16 @@ import HelloWorld from './components/HelloWorld.vue'
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 5fr 1fr;
   gap: 0.5rem;
 
   padding: 1rem 2rem 1rem 2rem;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .title {
@@ -49,17 +56,11 @@ import HelloWorld from './components/HelloWorld.vue'
   font-size: var(--fs-2);
 }
 
-.header-title {
-  display: flex;
-  align-items: end;
-  gap: 0.5rem;
-}
-
-.navbar {
+/* .navbar {
   display: flex;
   align-items: end;
   justify-content: end;
   gap: 0.5rem;
   font-size: var(--ff-4);
-}
+} */
 </style>
