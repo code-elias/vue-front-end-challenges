@@ -5,7 +5,7 @@
         <div class="card-header img-container">
           <img
             class="card-img"
-            src="../../assets/images/illustration-article.svg"
+            src="/images/illustration-article.svg"
             alt="HTML and CSS card banner"
           />
         </div>
@@ -22,11 +22,7 @@
 
         <div class="card-author">
           <div class="author-pfp img-container">
-            <img
-              src="../../assets/images/author-image.webp"
-              alt=""
-              class="author-pfp-img card-img"
-            />
+            <img src="/images/author-image.webp" alt="" class="author-pfp-img card-img" />
           </div>
           <a href="" class="author-name">Elias Golam</a>
         </div>

@@ -10,7 +10,7 @@ import ChallengeCard from '../components/ChallengeCard.vue'
         cardTitle="Blog Preview Card"
         cardInfo="TEST"
         cardLink="blog-preview-card"
-        cardBgImage="/src/assets/images/illustration-article.svg"
+        cardBgImage="/images/illustration-article.svg"
         cardBgPosition="top"
       />
     </div>
