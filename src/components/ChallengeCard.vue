@@ -1,8 +1,9 @@
 <template>
-  <div
+  <!-- <div
     class="card pointer"
-    :style="{ backgroundImage: `url(${cardBgImage})`, backgroundPosition: cardBgPosition }"
-  >
+    :style="{ backgroundImage: `url('${cardBgImage}')`, backgroundPosition: cardBgPosition }"
+  > -->
+  <div class="card pointer" :style="cardStyle" @click="goToLink">
     <div class="card-content">
       <h3 class="card-title">{{ cardTitle }}</h3>
       <p class="cardInfo">{{ cardInfo }}</p>
@@ -12,13 +13,26 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+const props = defineProps<{
   cardTitle: String
   cardInfo: String
   cardLink: String
   cardBgImage: String
   cardBgPosition: String
 }>()
+
+const cardStyle = computed(() => ({
+  backgroundImage: `url(${props.cardBgImage})`,
+  backgroundPosition: props.cardBgPosition
+}))
+
+function goToLink() {
+  router.push(props.cardLink)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +48,10 @@ defineProps<{
   flex-direction: column;
   justify-content: end;
   gap: 1em;
+
+  // background-image: url('/src/assets/images/illustration-article.svg');
   background-size: cover;
+  background-repeat: no-repeat;
 
   /* Transitions */
   transition: transform 250ms ease-in-out;
