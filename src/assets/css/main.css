@@ -2,13 +2,7 @@
 @import './base.css';
 
 #app {
-  /* font: var(--fw-default) var(--fs-default) var(--ff-default);
-  color: var(--clr-black);
-
-  background-color: var(--clr-yellow);
-
-  display: flex;
-  justify-content: center; */
+  min-height: 100vh;
 }
 
 .test {

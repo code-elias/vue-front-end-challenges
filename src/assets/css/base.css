@@ -1,6 +1,16 @@
 /* color palette from <https://github.com/vuejs/theme> */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+@font-face {
+  font-family: Figtree;
+  src: url('../fonts/Figtree-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: FigtreeItalic;
+  src: url('../fonts/Figtree-Italic-VariableFont_wght.ttf');
+}
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;

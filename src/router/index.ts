@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/test',
       name: 'test',
       component: () => import('../views/TestView.vue')
+    },
+    {
+      path: '/blog-preview-card',
+      name: 'blog-preview-card',
+      component: () => import('../views/challenges/BlogPreviewCardView.vue')
     }
   ]
 })

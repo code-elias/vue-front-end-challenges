@@ -4,26 +4,35 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <div class="header">
-      <!-- <HelloWorld msg="You did it!" /> -->
-      <div class="header-title">
-        <h1 class="title">FrontEnd Mentor Challenges</h1>
-        <p class="subtitle">by Elias Golam</p>
+  <div class="app-wrapper">
+    <header>
+      <div class="header">
+        <!-- <HelloWorld msg="You did it!" /> -->
+        <div class="header-title">
+          <h1 class="title">FrontEnd Mentor Challenges</h1>
+          <p class="subtitle">by Elias Golam</p>
+        </div>
+
+        <nav class="navbar">
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <!-- <RouterLink to="/test">Test</RouterLink> -->
+        </nav>
       </div>
+    </header>
 
-      <nav class="navbar">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <!-- <RouterLink to="/test">Test</RouterLink> -->
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
+.app-wrapper {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr;

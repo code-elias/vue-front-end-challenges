@@ -7,10 +7,11 @@ import ChallengeCard from '../components/ChallengeCard.vue'
   <main class="main">
     <div class="wrapper">
       <ChallengeCard
-        cardTitle="New Challenge"
+        cardTitle="Blog Preview Card"
         cardInfo="TEST"
-        cardLink="about"
+        cardLink="blog-preview-card"
         cardBgImage="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg"
+        cardBgPosition="top"
       />
     </div>
     <!-- <TheWelcome /> -->

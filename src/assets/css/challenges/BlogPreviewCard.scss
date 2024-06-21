@@ -1,0 +1,136 @@
+.container {
+  /* FONT */
+  --ff-title: 'Figtree', sans-serif;
+  --ff-default: 'Figtree', Helvetica, Arial, sans-serif;
+  --fw-default: 500;
+  --fw-bold: 800;
+  --fs-title: 20px;
+  --fs-default: 14px;
+  --fs-small: 12px;
+
+  /* SIZE */
+  --card-size: 327px;
+  --card-radius: 20px;
+  --card-padding: 24px;
+
+  --card-header-radius: 10px;
+
+  --card-pfp-size: 32px;
+
+  --card-label-radius: 4px;
+  --card-label-px: 12px;
+  --card-label-py: 4px;
+
+  /* COLOR */
+  --clr-yellow: hsl(47, 88%, 63%);
+  --clr-gray: hsl(0, 0%, 50%);
+  --clr-black: Black: hsl(0, 0%, 7%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--ff-default);
+  font-weight: var(--fw-default);
+  font-size: var(--fs-default);
+  color: var(--clr-black);
+  line-height: 1.4;
+
+  background-color: var(--clr-yellow);
+}
+
+.card {
+  position: relative;
+  width: var(--card-size);
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-padding);
+
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-black);
+
+  box-shadow: 15px 15px 15px 5px var(--clr-black);
+}
+
+.img-container {
+  overflow: hidden;
+}
+
+.card-img {
+  object-fit: cover;
+}
+
+.card-header {
+  border-radius: var(--card-header-radius);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--card-padding) / 2);
+}
+
+.card-label {
+  background-color: var(--clr-yellow);
+  width: fit-content;
+  padding: var(--card-label-py) var(--card-label-px) var(--card-label-py) var(--card-label-px);
+  border-radius: var(--card-label-radius);
+
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+}
+
+.card-date {
+  font-size: var(--fs-small);
+}
+
+.card-body {
+  color: var(--clr-gray);
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--card-padding) / 2);
+}
+
+.author-pfp {
+  width: var(--card-pfp-size);
+  height: var(--card-pfp-size);
+  border-radius: 50%;
+}
+
+.author-pfp-img {
+  object-position: 0 -2px;
+}
+
+.author-name {
+  font-weight: var(--fw-bold);
+}
+
+/* .card {
+  width: 320px;
+  height: 497px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--clr-white);
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 5px 5px 15px 5px var(--clr-grayish-blue-a);
+} */
