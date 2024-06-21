@@ -13,7 +13,7 @@
         <div class="card-info">
           <a href="" class="card-label" target="_blank">Learning</a>
           <p class="card-date">Published 21 Dec 2023</p>
-          <h2 class="card-title">HTML & CSS foundations</h2>
+          <h2 class="card-title test">HTML & CSS foundations</h2>
           <p class="card-body">
             These languages are the backbone of every website, defining structure, content, and
             presentation.

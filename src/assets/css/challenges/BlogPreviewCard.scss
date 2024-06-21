@@ -14,6 +14,7 @@
   --card-padding: 24px;
 
   --card-header-radius: 10px;
+  --card-header-height: 200px;
 
   --card-pfp-size: 32px;
 
@@ -65,19 +66,27 @@ main {
   background-color: var(--clr-white);
   border: 1px solid var(--clr-black);
 
-  box-shadow: 15px 15px 0px 15px var(--clr-black);
+  box-shadow: 8px 8px 0px 0px var(--clr-black);
 }
 
 .img-container {
   overflow: hidden;
 }
 
+.card-header {
+  border-radius: var(--card-header-radius);
+  width: 100%;
+  height: var(--card-header-height);
+}
+
 .card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.card-header {
-  border-radius: var(--card-header-radius);
+.card-title {
+  font-size: var(--fs-title);
 }
 
 .card-info {
