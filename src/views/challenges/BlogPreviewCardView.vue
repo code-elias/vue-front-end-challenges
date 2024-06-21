@@ -1,7 +1,7 @@
 <template>
   <main class="">
     <div class="container">
-      <div class="card">
+      <div class="card card-decoration">
         <div class="card-header img-container">
           <img
             class="card-img"

@@ -24,7 +24,7 @@
   /* COLOR */
   --clr-yellow: hsl(47, 88%, 63%);
   --clr-gray: hsl(0, 0%, 50%);
-  --clr-black: Black: hsl(0, 0%, 7%);
+  --clr-black: hsl(0, 0%, 7%);
   --clr-white: hsl(0, 0%, 100%);
 }
 
@@ -59,11 +59,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--card-padding);
+}
 
+.card-decoration {
   background-color: var(--clr-white);
   border: 1px solid var(--clr-black);
 
-  box-shadow: 15px 15px 15px 5px var(--clr-black);
+  box-shadow: 15px 15px 0px 15px var(--clr-black);
 }
 
 .img-container {
