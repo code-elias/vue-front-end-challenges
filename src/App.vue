@@ -35,11 +35,16 @@ import MainNavbar from './components/MainNavbar.vue'
 }
 
 .header {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  gap: 0.5rem;
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  justify-content: space-between;
+  /* padding: 1rem 2rem 1rem 2rem; */
+}
 
-  padding: 1rem 2rem 1rem 2rem;
+.header > * {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .header-title {
