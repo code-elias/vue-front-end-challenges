@@ -39,12 +39,13 @@ import MainNavbar from './components/MainNavbar.vue'
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: space-between;
+  position: relative;
   /* padding: 1rem 2rem 1rem 2rem; */
 }
 
 .header > * {
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .header-title {
