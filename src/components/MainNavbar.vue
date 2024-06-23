@@ -9,7 +9,7 @@ function toggle() {
   isActive.value = !isActive.value
 }
 
-function closeNavBar() {
+function closeSideBar() {
   toggle()
 }
 </script>
@@ -21,11 +21,16 @@ function closeNavBar() {
       <span class="middle line"></span>
       <span class="bottom line"></span>
     </button>
+
+    <nav class="navbar">
+      <RouterLink class="navlink" to="/">Home</RouterLink>
+      <RouterLink class="navlink" to="/about">About</RouterLink>
+    </nav>
   </div>
 
-  <nav class="navbar" :class="{ active: isActive }">
-    <RouterLink class="navitem" to="/" @click="closeNavBar">Home</RouterLink>
-    <RouterLink class="navitem" to="/about" @click="closeNavBar">About</RouterLink>
+  <nav class="sidebar" :class="{ active: isActive }">
+    <RouterLink class="navlink sidebar-item" to="/" @click="closeSideBar">Home</RouterLink>
+    <RouterLink class="navlink sidebar-item" to="/about" @click="closeSideBar">About</RouterLink>
   </nav>
   <!-- <div>
     <nav class="navbar">
@@ -43,16 +48,27 @@ function closeNavBar() {
 }
 
 .navbar {
-  --navbar-w: 60vw;
+  visibility: hidden;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.sidebar {
+  --sidebar-w: 60vw;
 
   position: absolute;
   top: 100%;
   // right: 0;
-  right: calc(var(--navbar-w) * (-1));
+  right: calc(var(--sidebar-w) * (-1));
   z-index: 100;
 
   height: 100vh;
-  width: var(--navbar-w);
+  width: var(--sidebar-w);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -70,10 +86,9 @@ function closeNavBar() {
   }
 }
 
-.navitem {
+.sidebar-item {
   padding: 0.5rem 1rem;
   text-align: end;
-
   transition: all 250ms;
 
   &:hover {
@@ -123,6 +138,48 @@ function closeNavBar() {
 
     .bottom {
       transform: translateY(-9px) rotate(45deg);
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .navbar-menu-btn {
+    visibility: hidden;
+    width: 0;
+  }
+
+  .sidebar {
+    right: -2000px;
+    width: 0;
+    visibility: hidden;
+  }
+
+  .navbar {
+    width: fit-content;
+    visibility: visible;
+  }
+
+  .navlink {
+    position: relative;
+
+    &::after {
+      content: '';
+      background: var(--vt-c-indigo);
+      position: absolute;
+      bottom: -0.1rem;
+      left: 0;
+      width: 100%;
+      border-radius: 6px;
+      height: 2px;
+
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 250ms ease-out;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+      transform-origin: bottom left;
     }
   }
 }
