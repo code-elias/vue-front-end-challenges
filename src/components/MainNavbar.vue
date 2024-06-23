@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
-import vue from '@vitejs/plugin-vue'
 
 let isActive = ref(false)
 
