@@ -8,6 +8,8 @@
   --fs-default: 14px;
   --fs-small: 12px;
 
+  --font-spacing: 1.6;
+
   /* SIZE */
   --card-size: 327px;
   --card-radius: 20px;
@@ -33,6 +35,7 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .container {
@@ -56,6 +59,8 @@ main {
   width: var(--card-size);
   padding: var(--card-padding);
   border-radius: var(--card-radius);
+
+  line-height: var(--font-spacing);
 
   display: flex;
   flex-direction: column;
@@ -87,6 +92,11 @@ main {
 
 .card-title {
   font-size: var(--fs-title);
+  transition: color 200ms ease-in;
+
+  &:hover {
+    color: var(--clr-yellow);
+  }
 }
 
 .card-info {
@@ -133,6 +143,11 @@ main {
   font-weight: var(--fw-bold);
 }
 
+@media only screen and (min-width: 700px) {
+  .container {
+    --card-size: 370px;
+  }
+}
 /* .card {
   width: 320px;
   height: 497px;
