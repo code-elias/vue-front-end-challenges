@@ -5,16 +5,20 @@ import { RouterView } from 'vue-router'
 import MainNavbar from './components/MainNavbar.vue'
 import ToggleHeaderBtn from './components/ToggleHeaderBtn.vue'
 
-const isHeaderVisible = ref<boolean>(true)
+const headerOpen = ref<boolean>(true)
 
 function toggleHeader() {
-  isHeaderVisible.value = !isHeaderVisible.value
+  headerOpen.value = !headerOpen.value
+}
+
+function showHeader(show: boolean) {
+  headerOpen.value = show
 }
 </script>
 
 <template>
   <div class="app-wrapper">
-    <header class="header" :class="{ hidden: !isHeaderVisible }">
+    <header class="header" :class="{ hidden: !headerOpen }">
       <!-- <HelloWorld msg="You did it!" /> -->
       <div class="header-title">
         <h1 class="title">FrontEnd Mentor Challenges</h1>
@@ -29,8 +33,8 @@ function toggleHeader() {
     </header>
 
     <main class="">
-      <ToggleHeaderBtn @toggleHeader="toggleHeader" />
-      <RouterView />
+      <ToggleHeaderBtn @toggleHeader="toggleHeader" :headerOpen="headerOpen" />
+      <RouterView @showHeader="showHeader" />
     </main>
   </div>
 </template>

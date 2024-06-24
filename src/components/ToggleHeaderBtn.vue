@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="toggle-btn" @click="toggle">
-      <Icon icon="ic:baseline-keyboard-arrow-up" class="icon" :class="{ open: headerOpen }" />
+      <Icon icon="ic:baseline-keyboard-arrow-up" class="icon" :class="{ open: !headerOpen }" />
     </button>
   </div>
 </template>
@@ -9,12 +9,20 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
-const emit = defineEmits(['toggleHeader'])
-const headerOpen = ref<boolean>(false)
+// const emit = defineEmits(['toggleHeader'])
+// const headerOpen = ref<boolean>(false)
+
+const props = defineProps<{
+  headerOpen: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'toggleHeader', value: boolean): void
+}>()
 
 function toggle() {
-  emit('toggleHeader')
-  headerOpen.value = !headerOpen.value
+  emit('toggleHeader', !props.headerOpen)
+  // headerOpen.value = !headerOpen.value
 }
 </script>
 

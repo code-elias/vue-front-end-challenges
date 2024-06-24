@@ -34,7 +34,18 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+
+const emit = defineEmits<{
+  (e: 'showHeader', show: boolean): void
+}>()
+
+onMounted(() => {
+  console.log('On Mounter')
+  emit('showHeader', false)
+})
+</script>
 
 <style lang="scss" scoped>
 @import '../../assets/css/challenges/BlogPreviewCard.scss';
