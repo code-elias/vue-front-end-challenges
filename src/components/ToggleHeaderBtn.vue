@@ -7,13 +7,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
-// const emit = defineEmits(['toggleHeader'])
-// const headerOpen = ref<boolean>(false)
 
 const props = defineProps<{
-  headerOpen: boolean
+  headerOpen: boolean // Prop to keep track of the State of the Header
 }>()
 
 const emit = defineEmits<{
@@ -22,13 +19,13 @@ const emit = defineEmits<{
 
 function toggle() {
   emit('toggleHeader', !props.headerOpen)
-  // headerOpen.value = !headerOpen.value
 }
 </script>
 
 <style lang="scss" scoped>
 .toggle-btn {
   position: absolute;
+  z-index: 90;
 }
 
 .icon {

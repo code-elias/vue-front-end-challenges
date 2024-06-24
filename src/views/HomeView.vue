@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
 import ChallengeCard from '../components/ChallengeCard.vue'
 </script>
 
@@ -13,7 +12,6 @@ import ChallengeCard from '../components/ChallengeCard.vue'
       cardBgPosition="top"
     />
   </div>
-  <!-- <TheWelcome /> -->
 </template>
 
 <style lang="scss" scoped>
@@ -21,5 +19,6 @@ import ChallengeCard from '../components/ChallengeCard.vue'
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 </style>

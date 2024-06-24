@@ -1,39 +1,54 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
+import { ref, watch } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
 import MainNavbar from './components/MainNavbar.vue'
 import ToggleHeaderBtn from './components/ToggleHeaderBtn.vue'
 
 const headerOpen = ref<boolean>(true)
+const route = useRoute()
+const isChallengePreviewPage = ref<boolean>(route.name !== 'home')
 
 function toggleHeader() {
-  headerOpen.value = !headerOpen.value
+  if (isChallengePreviewPage.value) {
+    headerOpen.value = !headerOpen.value
+    return
+  }
+  headerOpen.value = true
 }
 
 function showHeader(show: boolean) {
-  headerOpen.value = show
+  if (isChallengePreviewPage.value) {
+    headerOpen.value = show
+    return
+  }
+  headerOpen.value = true
 }
+
+watch(
+  () => route.name,
+  (newRouteName) => {
+    isChallengePreviewPage.value = newRouteName !== 'home'
+  }
+)
 </script>
 
 <template>
   <div class="app-wrapper">
     <header class="header" :class="{ hidden: !headerOpen }">
-      <!-- <HelloWorld msg="You did it!" /> -->
       <div class="header-title">
         <h1 class="title">FrontEnd Mentor Challenges</h1>
         <p class="subtitle">by Elias Golam</p>
       </div>
 
       <MainNavbar />
-      <!-- <nav class="navbar">
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-        </nav> -->
     </header>
 
     <main class="">
-      <ToggleHeaderBtn @toggleHeader="toggleHeader" :headerOpen="headerOpen" />
+      <ToggleHeaderBtn
+        @toggleHeader="toggleHeader"
+        :headerOpen="headerOpen"
+        v-show="isChallengePreviewPage"
+      />
       <RouterView @showHeader="showHeader" />
     </main>
   </div>
@@ -60,13 +75,12 @@ main {
   padding-right: 1rem;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
   max-height: 300px;
   transition: max-height 600ms ease-in-out;
-  /* padding: 1rem 2rem 1rem 2rem; */
 }
 
 .header.hidden {
+  overflow: hidden;
   max-height: 0;
 }
 
@@ -88,12 +102,4 @@ main {
 .subtitle {
   font-size: var(--fs-2);
 }
-
-/* .navbar {
-  display: flex;
-  align-items: end;
-  justify-content: end;
-  gap: 0.5rem;
-  font-size: var(--ff-4);
-} */
 </style>
