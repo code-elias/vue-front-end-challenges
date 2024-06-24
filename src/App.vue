@@ -1,28 +1,37 @@
 <script setup lang="ts">
-import { RouterLink, RouterView, createRouter } from 'vue-router'
+import { ref } from 'vue'
+import { RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 import MainNavbar from './components/MainNavbar.vue'
+import ToggleHeaderBtn from './components/ToggleHeaderBtn.vue'
+
+const isHeaderVisible = ref<boolean>(true)
+
+function toggleHeader() {
+  isHeaderVisible.value = !isHeaderVisible.value
+}
 </script>
 
 <template>
   <div class="app-wrapper">
-    <header>
-      <div class="header">
-        <!-- <HelloWorld msg="You did it!" /> -->
-        <div class="header-title">
-          <h1 class="title">FrontEnd Mentor Challenges</h1>
-          <p class="subtitle">by Elias Golam</p>
-        </div>
+    <header class="header" :class="{ hidden: !isHeaderVisible }">
+      <!-- <HelloWorld msg="You did it!" /> -->
+      <div class="header-title">
+        <h1 class="title">FrontEnd Mentor Challenges</h1>
+        <p class="subtitle">by Elias Golam</p>
+      </div>
 
-        <MainNavbar />
-        <!-- <nav class="navbar">
+      <MainNavbar />
+      <!-- <nav class="navbar">
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/about">About</RouterLink>
         </nav> -->
-      </div>
     </header>
 
-    <RouterView />
+    <main class="">
+      <ToggleHeaderBtn @toggleHeader="toggleHeader" />
+      <RouterView />
+    </main>
   </div>
 </template>
 
@@ -34,13 +43,27 @@ import MainNavbar from './components/MainNavbar.vue'
   flex-direction: column;
 }
 
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .header {
   display: flex;
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: space-between;
   position: relative;
+  overflow: hidden;
+  max-height: 300px;
+  transition: max-height 600ms ease-in-out;
   /* padding: 1rem 2rem 1rem 2rem; */
+}
+
+.header.hidden {
+  max-height: 0;
 }
 
 .header > * {

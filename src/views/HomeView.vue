@@ -4,18 +4,16 @@ import ChallengeCard from '../components/ChallengeCard.vue'
 </script>
 
 <template>
-  <main class="main">
-    <div class="wrapper">
-      <ChallengeCard
-        cardTitle="Blog Preview Card"
-        cardInfo="TEST"
-        cardLink="blog-preview-card"
-        cardBgImage="/images/illustration-article.svg"
-        cardBgPosition="top"
-      />
-    </div>
-    <!-- <TheWelcome /> -->
-  </main>
+  <div class="wrapper">
+    <ChallengeCard
+      cardTitle="Blog Preview Card"
+      cardInfo="TEST"
+      cardLink="blog-preview-card"
+      cardBgImage="/images/illustration-article.svg"
+      cardBgPosition="top"
+    />
+  </div>
+  <!-- <TheWelcome /> -->
 </template>
 
 <style lang="scss" scoped>
