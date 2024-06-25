@@ -120,18 +120,23 @@
   --border-radius-h: calc(var(--card-spacing) / 4);
 
   width: 100%;
-  border-radius: var(--border-radius);
-  background: var(--clr-gray);
+  gap: calc(var(--card-spacing) / 1.5);
 
-  transition:
-    color 250ms ease-in-out,
-    background 250ms ease-in-out,
-    border-radius 300ms ease-in-out;
+  &__link {
+    border-radius: var(--border-radius);
+    background: var(--clr-gray);
+    width: 100%;
 
-  &:hover {
-    background: var(--clr-green);
-    color: var(--clr-off-black);
-    border-radius: var(--border-radius-h);
+    transition:
+      color 250ms ease-in-out,
+      background 250ms ease-in-out,
+      border-radius 300ms ease-in-out;
+
+    &:hover {
+      background: var(--clr-green);
+      color: var(--clr-off-black);
+      border-radius: var(--border-radius-h);
+    }
   }
 }
 

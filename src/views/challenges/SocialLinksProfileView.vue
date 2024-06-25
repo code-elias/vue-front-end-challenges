@@ -1,10 +1,19 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import SocialLink from '../../components/social-links-profile/SocialLink.vue'
+import { ref, onMounted } from 'vue'
+import { SocialLink } from '@/models/SocialLink'
+import SocialLinkComponent from '../../components/social-links-profile/SocialLink.vue'
 
 onMounted(() => {
   console.log('Mounted Social Links')
 })
+
+const socialLinks = ref<SocialLink[]>([
+  new SocialLink('GitHub', 'https://github.com/EliGolam'),
+  new SocialLink('Frontend Mentor', 'https://www.frontendmentor.io/profile/EliGolam'),
+  new SocialLink('LinkedIn', 'https://www.linkedin.com/in/mahfuzul-golam/'),
+  new SocialLink('Twitter', 'https://twitter.com/'),
+  new SocialLink('Instagram', 'https://www.instagram.com/')
+])
 </script>
 
 <template>
@@ -25,8 +34,14 @@ onMounted(() => {
         </section>
       </header>
 
-      <section class="social">
-        <SocialLink class="social__link" linkTitle="GitHub" link="https://www.google.com/" />
+      <section class="social flex-col-center">
+        <SocialLinkComponent
+          v-for="(link, index) in socialLinks"
+          class="social__link"
+          :key="index"
+          :linkTitle="link.title"
+          :link="link.url"
+        />
       </section>
     </div>
   </div>
