@@ -85,6 +85,12 @@
   &__header {
     gap: var(--card-spacing);
   }
+
+  &:hover {
+    .avatar {
+      box-shadow: 0 0 0 2px var(--clr-green);
+    }
+  }
 }
 
 .avatar {
@@ -94,6 +100,8 @@
   border-radius: 50%;
   overflow: hidden;
   margin: auto;
+
+  transition: all 400ms ease-out;
 }
 
 .card-title {
