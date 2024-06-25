@@ -28,3 +28,8 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Exluded Files
+/src/assets/fonts
+/src/design
+/public
