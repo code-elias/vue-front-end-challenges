@@ -11,6 +11,11 @@
   src: url('../fonts/Figtree-Italic-VariableFont_wght.ttf');
 }
 
+@font-face {
+  font-family: Inter-V;
+  src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;

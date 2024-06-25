@@ -3,11 +3,19 @@ import ChallengeCard from '../components/ChallengeCard.vue'
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper card-container">
     <ChallengeCard
       cardTitle="Blog Preview Card"
       cardInfo="Challenge to create a Blog Preview Card using HTML and CSS"
       cardLink="blog-preview-card"
+      cardBgImage="/images/illustration-article.svg"
+      cardBgPosition="top"
+    />
+
+    <ChallengeCard
+      cardTitle="Social links profile"
+      cardInfo="Social link-sharing profile"
+      cardLink="social-links-profile"
       cardBgImage="/images/illustration-article.svg"
       cardBgPosition="top"
     />
@@ -16,9 +24,14 @@ import ChallengeCard from '../components/ChallengeCard.vue'
 
 <style lang="scss" scoped>
 .wrapper {
+  flex: 1;
+}
+
+.card-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 </style>

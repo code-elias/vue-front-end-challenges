@@ -1,0 +1,92 @@
+.container {
+  /* FONT */
+  --ff-title: 'Inter-V', sans-serif;
+  --ff-default: 'Inter-V', Helvetica, Arial, sans-serif;
+  --fw-default: 400;
+  --fw-bold: 800;
+  --fs-title: 20px;
+  --fs-default: 14px;
+  --fs-small: 12px;
+
+  --ff-400: 400;
+  --ff-600: 600;
+  --ff-700: 700;
+
+  --font-spacing: 1.6;
+
+  /* SIZE */
+  --card-size: 327px;
+  --card-radius: 20px;
+  --card-padding: 24px;
+
+  --card-header-radius: 10px;
+  --card-header-height: 200px;
+
+  --card-pfp-size: 32px;
+
+  --card-label-radius: 4px;
+  --card-label-px: 12px;
+  --card-label-py: 4px;
+
+  /* COLOR */
+  --clr-green: hsl(75, 94%, 57%);
+  --clr-gray: hsl(0, 0%, 20%);
+  --clr-dark-grey: hsl(0, 0%, 12%);
+  --clr-off-black: hsl(0, 0%, 8%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--clr-off-black);
+
+  /* Typography */
+  font-family: var(--ff-default);
+  font-weight: var(--fw-default);
+  font-size: var(--fs-default);
+  color: var(--clr-white);
+  line-height: 1.4;
+}
+
+.img-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  --card-min-size: 12.5rem;
+  --card-size: 90%;
+  --card-max-size: 24rem;
+  --card-spacing: 24px;
+  --card-radius: 15px;
+
+  width: clamp(var(--card-min-size), var(--card-size), var(--card-max-size));
+  padding: var(--card-spacing);
+  overflow: hidden;
+  border-radius: var(--card-radius);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--card-spacing);
+}
+
+.avatar {
+  --size: 100px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 700px) {
+  // .container {
+  //   --card-size: 370px;
+  // }
+}

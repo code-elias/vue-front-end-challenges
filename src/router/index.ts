@@ -26,6 +26,11 @@ const router = createRouter({
       path: '/blog-preview-card',
       name: 'blog-preview-card',
       component: () => import('../views/challenges/BlogPreviewCardView.vue')
+    },
+    {
+      path: '/social-links-profile',
+      name: 'social-links-profile',
+      component: () => import('../views/challenges/SocialLinksProfileView.vue')
     }
   ]
 })
