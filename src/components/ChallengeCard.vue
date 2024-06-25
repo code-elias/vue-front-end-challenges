@@ -1,28 +1,14 @@
-<template>
-  <!-- <div
-    class="card pointer"
-    :style="{ backgroundImage: `url('${cardBgImage}')`, backgroundPosition: cardBgPosition }"
-  > -->
-  <div class="card pointer" :style="cardStyle" @click="goToLink">
-    <div class="card-content">
-      <h3 class="card-title">{{ cardTitle }}</h3>
-      <p class="cardInfo">{{ cardInfo }}</p>
-      <RouterLink :to="cardLink">Explore</RouterLink>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const props = defineProps<{
-  cardTitle: String
-  cardInfo: String
-  cardLink: String
-  cardBgImage: String
-  cardBgPosition: String
+  cardTitle: string
+  cardInfo: string
+  cardLink: string
+  cardBgImage: string
+  cardBgPosition: string
 }>()
 
 const cardStyle = computed(() => ({
@@ -34,6 +20,18 @@ function goToLink() {
   router.push(props.cardLink)
 }
 </script>
+
+<template>
+  <div class="card pointer" :style="cardStyle" @click="goToLink">
+    <div class="card-content">
+      <h3 class="card-title">{{ cardTitle }}</h3>
+      <p class="cardInfo">{{ cardInfo }}</p>
+      <div class="link-container">
+        <RouterLink class="link" :to="cardLink">Explore</RouterLink>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .card {
@@ -52,13 +50,15 @@ function goToLink() {
   // background-image: url('/src/assets/images/illustration-article.svg');
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 12px 12px 0 -5px var(--vt-c-indigo-1);
 
   /* Transitions */
   transition: transform 250ms ease-in-out;
 
   &:hover,
   &:focus-within {
-    transform: scale(1.05);
+    // transform: scale(1.05);
+    transform: translate(-5px, -5px);
   }
 }
 

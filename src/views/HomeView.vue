@@ -6,7 +6,7 @@ import ChallengeCard from '../components/ChallengeCard.vue'
   <div class="wrapper">
     <ChallengeCard
       cardTitle="Blog Preview Card"
-      cardInfo="TEST"
+      cardInfo="Challenge to create a Blog Preview Card using HTML and CSS"
       cardLink="blog-preview-card"
       cardBgImage="/images/illustration-article.svg"
       cardBgPosition="top"
