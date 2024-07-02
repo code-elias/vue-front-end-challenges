@@ -16,7 +16,7 @@ import ChallengeCard from '../components/ChallengeCard.vue'
       cardTitle="Social links profile"
       cardInfo="Social link-sharing profile"
       cardLink="social-links-profile"
-      cardBgImage="/images/illustration-article.svg"
+      cardBgImage="/images/social-link-page-preview.png"
       cardBgPosition="top"
     />
   </div>
