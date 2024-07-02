@@ -3,8 +3,12 @@ import { ref, onMounted } from 'vue'
 import { SocialLink } from '@/models/SocialLink'
 import SocialLinkComponent from '../../components/social-links-profile/SocialLink.vue'
 
+const emit = defineEmits<{
+  (e: 'showHeader', show: boolean): void
+}>()
+
 onMounted(() => {
-  console.log('Mounted Social Links')
+  emit('showHeader', false)
 })
 
 const socialLinks = ref<SocialLink[]>([
