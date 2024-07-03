@@ -23,7 +23,7 @@ const socialLinks = ref<SocialLink[]>(PersonalSocials)
     <div class="card flex-col-center">
       <header class="card__header flex-col-center">
         <div class="avatar img-container">
-          <img src="/images/author-image.webp" alt="Profile Picture" class="avatar__img" />
+          <img src="/images/author-image.webp" alt="Elias Profile Picture" class="avatar__img" />
         </div>
 
         <section class="card-title flex-col-center">
