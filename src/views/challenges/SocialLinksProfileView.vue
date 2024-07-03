@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { SocialLink } from '@/models/SocialLink'
 import SocialLinkComponent from '../../components/social-links-profile/SocialLink.vue'
+import { PersonalSocials } from '../../data/PersonalSocials'
 
 const emit = defineEmits<{
   (e: 'showHeader', show: boolean): void
@@ -11,13 +12,15 @@ onMounted(() => {
   emit('showHeader', false)
 })
 
-const socialLinks = ref<SocialLink[]>([
-  new SocialLink('GitHub', 'https://github.com/EliGolam'),
-  new SocialLink('Frontend Mentor', 'https://www.frontendmentor.io/profile/EliGolam'),
-  new SocialLink('LinkedIn', 'https://www.linkedin.com/in/mahfuzul-golam/'),
-  new SocialLink('Twitter', 'https://twitter.com/'),
-  new SocialLink('Instagram', 'https://www.instagram.com/')
-])
+const socialLinks = ref<SocialLink[]>(PersonalSocials)
+
+// const socialLinks = ref<SocialLink[]>([
+//   new SocialLink('GitHub', 'https://github.com/EliGolam'),
+//   new SocialLink('Frontend Mentor', 'https://www.frontendmentor.io/profile/EliGolam'),
+//   new SocialLink('LinkedIn', 'https://www.linkedin.com/in/mahfuzul-golam/'),
+//   new SocialLink('Twitter', 'https://twitter.com/'),
+//   new SocialLink('Instagram', 'https://www.instagram.com/')
+// ])
 </script>
 
 <template>
