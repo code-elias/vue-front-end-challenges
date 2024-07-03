@@ -4,7 +4,9 @@ import { RouterView, useRoute } from 'vue-router'
 import MainNavbar from './components/MainNavbar.vue'
 import ToggleHeaderBtn from './components/ToggleHeaderBtn.vue'
 
+const defaultToggleBtnColor = 'default'
 const headerOpen = ref<boolean>(true)
+const toggleBtnForcedTheme = ref<string>(defaultToggleBtnColor)
 const route = useRoute()
 const isChallengePreviewPage = ref<boolean>(route.name !== 'home')
 
@@ -24,10 +26,16 @@ function showHeader(show: boolean) {
   headerOpen.value = true
 }
 
+function setHeaderToggleColor(color: string) {
+  toggleBtnForcedTheme.value = color
+}
+
 watch(
   () => route.name,
   (newRouteName) => {
+    // console.log(newRouteName)
     isChallengePreviewPage.value = newRouteName !== 'home'
+    toggleBtnForcedTheme.value = defaultToggleBtnColor
   }
 )
 </script>
@@ -43,13 +51,14 @@ watch(
       <MainNavbar />
     </header>
 
-    <main class="">
+    <main>
       <ToggleHeaderBtn
         @toggleHeader="toggleHeader"
         :headerOpen="headerOpen"
+        :btn-color="toggleBtnForcedTheme"
         v-show="isChallengePreviewPage"
       />
-      <RouterView @showHeader="showHeader" />
+      <RouterView @showHeader="showHeader" @setHeaderToggleColor="setHeaderToggleColor" />
     </main>
   </div>
 </template>

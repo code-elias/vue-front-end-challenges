@@ -5,22 +5,17 @@ import SocialLinkComponent from '../../components/social-links-profile/SocialLin
 import { PersonalSocials } from '../../data/PersonalSocials'
 
 const emit = defineEmits<{
-  (e: 'showHeader', show: boolean): void
+  // (e: 'showHeader', show: boolean): void // Version below 3.2
+  showHeader: [show: boolean] // From v3.3+
+  setHeaderToggleColor: [color: string]
 }>()
 
 onMounted(() => {
   emit('showHeader', false)
+  emit('setHeaderToggleColor', 'light')
 })
 
 const socialLinks = ref<SocialLink[]>(PersonalSocials)
-
-// const socialLinks = ref<SocialLink[]>([
-//   new SocialLink('GitHub', 'https://github.com/EliGolam'),
-//   new SocialLink('Frontend Mentor', 'https://www.frontendmentor.io/profile/EliGolam'),
-//   new SocialLink('LinkedIn', 'https://www.linkedin.com/in/mahfuzul-golam/'),
-//   new SocialLink('Twitter', 'https://twitter.com/'),
-//   new SocialLink('Instagram', 'https://www.instagram.com/')
-// ])
 </script>
 
 <template>

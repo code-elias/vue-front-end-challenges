@@ -69,6 +69,9 @@
   --color-text-inv: var(--vt-c-text-dark-1);
   --section-gap: 160px;
 
+  --color-dark: var(--vt-c-black-soft);
+  --color-light: var(--vt-c-white-soft);
+
   /* FONT DEFAULTS */
   --ff-default: "Josefin Sans";
   --fw-default: var(--fw-4);
