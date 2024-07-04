@@ -67,10 +67,6 @@
     font-weight: var(--fw-400);
     color: var(--color-heading);
   }
-
-  .emphasis {
-    font-weight: var(--fw-600);
-  }
 }
 
 .recipe {
@@ -79,6 +75,19 @@
   &__title {
     text-align: center;
     animation: titleSlide 600ms ease-in;
+  }
+}
+
+/* INSTRUCTIONS */
+.instructions {
+  &__steps {
+    list-style: decimal inside;
+  }
+
+  &__step {
+    &::marker {
+      color: var(--clr-nutmeg);
+    }
   }
 }
 

@@ -11,4 +11,12 @@ defineProps<{
   </li>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+li {
+  margin-top: 0.6rem;
+
+  .emphasis {
+    font-weight: var(--fw-600);
+  }
+}
+</style>
