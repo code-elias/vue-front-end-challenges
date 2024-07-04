@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import { ref } from 'vue'
 import { onMounted } from 'vue'
+import SectionDivider from '../../components/recipe-page/SectionDivider.vue'
 
 const emit = defineEmits<{
   showHeader: [show: boolean]
@@ -104,7 +105,7 @@ const nutritionValues = [
         <h3 class="info-header">Preparation time</h3>
         <ul class="prep-time__list">
           <li v-for="(element, index) in prepTimeElements" :key="index" class="prep-time__element">
-            {{ element.Emphasis }}: {{ element.Text }}
+            <strong class="emphasis"> {{ element.Emphasis }} </strong>: {{ element.Text }}
           </li>
         </ul>
       </section>
@@ -118,14 +119,18 @@ const nutritionValues = [
         </ul>
       </section>
 
+      <SectionDivider />
+
       <section class="instructions">
         <h3 class="section-header">Instructions</h3>
         <ol class="instructions__steps">
           <li v-for="(step, index) in instructions" :key="index" class="instructions__step">
-            {{ step.Emphasis }}: {{ step.Text }}
+            <strong class="emphasis"> {{ step.Emphasis }} </strong>: {{ step.Text }}
           </li>
         </ol>
       </section>
+
+      <SectionDivider />
 
       <sections class="nutrition">
         <h3 class="section-header">Nutrition</h3>
