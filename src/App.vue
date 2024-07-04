@@ -43,9 +43,14 @@ watch(
 <template>
   <div class="app-wrapper">
     <header class="header" :class="{ hidden: !headerOpen }">
-      <div class="header-title">
-        <h1 class="title">FrontEnd Mentor Challenges</h1>
-        <p class="subtitle">by Elias Golam</p>
+      <div class="header-main">
+        <div class="header-logo img-container">
+          <img src="./assets/elias-logo.png" alt="Elias Codes Logo" />
+        </div>
+        <div class="header-title">
+          <h1 class="title">FrontEnd Mentor Challenges</h1>
+          <p class="subtitle">by Elias Golam</p>
+        </div>
       </div>
 
       <MainNavbar />
@@ -86,6 +91,16 @@ main {
   position: relative;
   max-height: 300px;
   transition: max-height 600ms ease-in-out;
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo {
+  width: 8rem;
 }
 
 .header.hidden {

@@ -8,7 +8,7 @@ const props = defineProps<{
   cardInfo: string
   cardLink: string
   cardBgImage: string
-  cardBgPosition: string
+  cardBgPosition?: string
 }>()
 
 const cardStyle = computed(() => ({
