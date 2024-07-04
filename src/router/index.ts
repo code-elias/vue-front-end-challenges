@@ -37,7 +37,14 @@ const router = createRouter({
       name: 'recipe-page',
       component: () => import('../views/challenges/RecipePageView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 export default router
