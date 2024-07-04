@@ -2,6 +2,7 @@
 // import { ref } from 'vue'
 import { onMounted } from 'vue'
 import SectionDivider from '../../components/recipe-page/SectionDivider.vue'
+import ListItem from '../../components/recipe-page/ListItem.vue'
 
 const emit = defineEmits<{
   showHeader: [show: boolean]
@@ -104,9 +105,16 @@ const nutritionValues = [
       <section class="prep-time info-block">
         <h3 class="info-header">Preparation time</h3>
         <ul class="prep-time__list">
-          <li v-for="(element, index) in prepTimeElements" :key="index" class="prep-time__element">
+          <!-- <li v-for="(element, index) in prepTimeElements" :key="index" class="prep-time__element">
             <strong class="emphasis"> {{ element.Emphasis }} </strong>: {{ element.Text }}
-          </li>
+          </li> -->
+          <ListItem
+            v-for="(element, index) in prepTimeElements"
+            :key="index"
+            class="prep-time__element"
+            :emphasis="element.Emphasis"
+            :text="element.Text"
+          />
         </ul>
       </section>
 
@@ -124,15 +132,19 @@ const nutritionValues = [
       <section class="instructions">
         <h3 class="section-header">Instructions</h3>
         <ol class="instructions__steps">
-          <li v-for="(step, index) in instructions" :key="index" class="instructions__step">
-            <strong class="emphasis"> {{ step.Emphasis }} </strong>: {{ step.Text }}
-          </li>
+          <ListItem
+            v-for="(step, index) in instructions"
+            :key="index"
+            class="instructions__step"
+            :emphasis="step.Emphasis"
+            :text="step.Text"
+          />
         </ol>
       </section>
 
       <SectionDivider />
 
-      <sections class="nutrition">
+      <section class="nutrition">
         <h3 class="section-header">Nutrition</h3>
         <p>The table below shows nutritional values per serving without the additional fillings.</p>
 
@@ -142,7 +154,7 @@ const nutritionValues = [
             {{ value.Category }} - {{ value.Amount }}
           </div>
         </div>
-      </sections>
+      </section>
     </div>
   </div>
 </template>
