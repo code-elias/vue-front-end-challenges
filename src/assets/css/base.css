@@ -16,6 +16,16 @@
   src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
 }
 
+@font-face {
+  font-family: 'Outfit';
+  src: url('../fonts/outfit/Outfit-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'YoungSerif';
+  src: url('../fonts/young-serif/YoungSerif-Regular.ttf');
+}
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;

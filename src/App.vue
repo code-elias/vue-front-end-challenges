@@ -49,7 +49,7 @@ watch(
         </div>
         <div class="header-title">
           <h1 class="title">FrontEnd Mentor Challenges</h1>
-          <p class="subtitle">by Elias Golam</p>
+          <p class="subtitle">by Elias Codes</p>
         </div>
       </div>
 
