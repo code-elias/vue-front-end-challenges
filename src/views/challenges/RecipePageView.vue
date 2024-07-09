@@ -3,6 +3,13 @@
 import { onMounted } from 'vue'
 import SectionDivider from '../../components/recipe-page/SectionDivider.vue'
 import ListItem from '../../components/recipe-page/ListItem.vue'
+import NutritionValue from '../../components/recipe-page/NutritionValue.vue'
+
+// Data
+import { prepTime } from '../../data/RecipePage/PrepTime.ts'
+import { instructions } from '../../data/RecipePage/Instructions.ts'
+import { ingredients } from '../../data/RecipePage/Ingredients.ts'
+import { nutritionValues } from '../../data/RecipePage/NutritionValues.ts'
 
 const emit = defineEmits<{
   showHeader: [show: boolean]
@@ -13,75 +20,6 @@ onMounted(() => {
   emit('showHeader', false)
   emit('setHeaderToggleColor', 'dark')
 })
-
-const prepTimeElements = [
-  {
-    Emphasis: 'Total',
-    Text: 'Approximately 10 minutes'
-  },
-  {
-    Emphasis: 'Preparation',
-    Text: '5 minutes'
-  },
-  {
-    Emphasis: 'Cooking',
-    Text: '5 minutes'
-  }
-]
-
-const ingredients = [
-  '2-3 large eggs',
-  'Salt, to taste',
-  'Pepper, to taste',
-  '1 tablespoon of butter or oil',
-  'Optional fillings: cheese, diced vegetables, cooked meats, herbs'
-]
-
-const instructions = [
-  {
-    Emphasis: 'Beat the eggs',
-    Text: 'In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.'
-  },
-  {
-    Emphasis: 'Heat the pan',
-    Text: 'Place a non-stick frying pan over medium heat and add butter or oil.'
-  },
-  {
-    Emphasis: 'Cook the omelette',
-    Text: 'Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.'
-  },
-  {
-    Emphasis: 'Add fillings (optional)',
-    Text: 'When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.'
-  },
-  {
-    Emphasis: 'Fold and serve',
-    Text: 'As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.'
-  },
-  {
-    Emphasis: 'Enjoy',
-    Text: 'Serve hot, with additional salt and pepper if needed.'
-  }
-]
-
-const nutritionValues = [
-  {
-    Category: 'Calories',
-    Amount: '277kcal'
-  },
-  {
-    Category: 'Carbs',
-    Amount: '0g'
-  },
-  {
-    Category: 'Protein',
-    Amount: '20g'
-  },
-  {
-    Category: 'Fat',
-    Amount: '22g'
-  }
-]
 </script>
 
 <template>
@@ -105,11 +43,11 @@ const nutritionValues = [
       <section class="prep-time info-block">
         <h3 class="info-header">Preparation time</h3>
         <ul class="prep-time__list">
-          <!-- <li v-for="(element, index) in prepTimeElements" :key="index" class="prep-time__element">
+          <!-- <li v-for="(element, index) in prepTime" :key="index" class="prep-time__element">
             <strong class="emphasis"> {{ element.Emphasis }} </strong>: {{ element.Text }}
           </li> -->
           <ListItem
-            v-for="(element, index) in prepTimeElements"
+            v-for="(element, index) in prepTime"
             :key="index"
             class="prep-time__element"
             :emphasis="element.Emphasis"
@@ -150,9 +88,13 @@ const nutritionValues = [
 
         <!-- Find how to style this place -->
         <div class="nutrition__table">
-          <div v-for="(value, index) in nutritionValues" :key="index" class="nutrition__value">
-            {{ value.Category }} - {{ value.Amount }}
-          </div>
+          <NutritionValue
+            v-for="(value, index) in nutritionValues"
+            :key="index"
+            class="nutrition__value"
+            :category="value.Category"
+            :amount="value.Amount"
+          />
         </div>
       </section>
     </div>
