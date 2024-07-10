@@ -2,18 +2,20 @@
 import { ref, onMounted } from 'vue'
 import { SocialLink } from '@/models/SocialLink'
 import SocialLinkComponent from '../../components/social-links-profile/SocialLink.vue'
+import { PersonalSocials } from '../../data/PersonalSocials'
+
+const emit = defineEmits<{
+  // (e: 'showHeader', show: boolean): void // Version below 3.2
+  showHeader: [show: boolean] // From v3.3+
+  setHeaderToggleColor: [color: string]
+}>()
 
 onMounted(() => {
-  console.log('Mounted Social Links')
+  emit('showHeader', false)
+  emit('setHeaderToggleColor', 'light')
 })
 
-const socialLinks = ref<SocialLink[]>([
-  new SocialLink('GitHub', 'https://github.com/EliGolam'),
-  new SocialLink('Frontend Mentor', 'https://www.frontendmentor.io/profile/EliGolam'),
-  new SocialLink('LinkedIn', 'https://www.linkedin.com/in/mahfuzul-golam/'),
-  new SocialLink('Twitter', 'https://twitter.com/'),
-  new SocialLink('Instagram', 'https://www.instagram.com/')
-])
+const socialLinks = ref<SocialLink[]>(PersonalSocials)
 </script>
 
 <template>
@@ -21,7 +23,7 @@ const socialLinks = ref<SocialLink[]>([
     <div class="card flex-col-center">
       <header class="card__header flex-col-center">
         <div class="avatar img-container">
-          <img src="/images/author-image.webp" alt="Profile Picture" class="avatar__img" />
+          <img src="/images/author-image.webp" alt="Elias Profile Picture" class="avatar__img" />
         </div>
 
         <section class="card-title flex-col-center">

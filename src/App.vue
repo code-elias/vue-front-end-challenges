@@ -4,7 +4,9 @@ import { RouterView, useRoute } from 'vue-router'
 import MainNavbar from './components/MainNavbar.vue'
 import ToggleHeaderBtn from './components/ToggleHeaderBtn.vue'
 
+const defaultToggleBtnColor = 'default'
 const headerOpen = ref<boolean>(true)
+const toggleBtnForcedTheme = ref<string>(defaultToggleBtnColor)
 const route = useRoute()
 const isChallengePreviewPage = ref<boolean>(route.name !== 'home')
 
@@ -24,10 +26,16 @@ function showHeader(show: boolean) {
   headerOpen.value = true
 }
 
+function setHeaderToggleColor(color: string) {
+  toggleBtnForcedTheme.value = color
+}
+
 watch(
   () => route.name,
   (newRouteName) => {
+    // console.log(newRouteName)
     isChallengePreviewPage.value = newRouteName !== 'home'
+    toggleBtnForcedTheme.value = defaultToggleBtnColor
   }
 )
 </script>
@@ -35,21 +43,27 @@ watch(
 <template>
   <div class="app-wrapper">
     <header class="header" :class="{ hidden: !headerOpen }">
-      <div class="header-title">
-        <h1 class="title">FrontEnd Mentor Challenges</h1>
-        <p class="subtitle">by Elias Golam</p>
+      <div class="header-main">
+        <div class="header-logo img-container">
+          <img src="./assets/elias-logo.png" alt="Elias Codes Logo" />
+        </div>
+        <div class="header-title">
+          <h1 class="title">FrontEnd Mentor Challenges</h1>
+          <p class="subtitle">by Elias Codes</p>
+        </div>
       </div>
 
       <MainNavbar />
     </header>
 
-    <main class="">
+    <main>
       <ToggleHeaderBtn
         @toggleHeader="toggleHeader"
         :headerOpen="headerOpen"
+        :btn-color="toggleBtnForcedTheme"
         v-show="isChallengePreviewPage"
       />
-      <RouterView @showHeader="showHeader" />
+      <RouterView @showHeader="showHeader" @setHeaderToggleColor="setHeaderToggleColor" />
     </main>
   </div>
 </template>
@@ -77,6 +91,16 @@ main {
   position: relative;
   max-height: 300px;
   transition: max-height 600ms ease-in-out;
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo {
+  width: 8rem;
 }
 
 .header.hidden {

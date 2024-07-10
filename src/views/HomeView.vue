@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import ChallengeCard from '../components/ChallengeCard.vue'
+import { HomeChallengeCards } from '../data/HomeChallengeCards'
 </script>
 
 <template>
   <div class="wrapper card-container">
     <ChallengeCard
+      v-for="(card, index) in HomeChallengeCards"
+      :key="index"
+      :cardTitle="card.Title"
+      :cardInfo="card.Info"
+      :cardLink="card.Link"
+      :cardBgImage="card.BgImg"
+      :cardBgPosition="card.BgPosition"
+    />
+
+    <!-- <ChallengeCard
       cardTitle="Blog Preview Card"
       cardInfo="Challenge to create a Blog Preview Card using HTML and CSS"
       cardLink="blog-preview-card"
@@ -18,7 +29,7 @@ import ChallengeCard from '../components/ChallengeCard.vue'
       cardLink="social-links-profile"
       cardBgImage="/images/social-link-page-preview.png"
       cardBgPosition="top"
-    />
+    /> -->
   </div>
 </template>
 

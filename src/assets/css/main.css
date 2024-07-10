@@ -3,6 +3,7 @@
 
 #app {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .test {
@@ -20,4 +21,14 @@
 
 .pointer {
   cursor: pointer;
+}
+
+.img-container {
+  overflow: hidden;
+}
+
+.img-container>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

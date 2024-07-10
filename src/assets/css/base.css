@@ -16,6 +16,16 @@
   src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
 }
 
+@font-face {
+  font-family: 'Outfit';
+  src: url('../fonts/outfit/Outfit-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'YoungSerif';
+  src: url('../fonts/young-serif/YoungSerif-Regular.ttf');
+}
+
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -68,6 +78,9 @@
   --color-text: var(--vt-c-text-light-1);
   --color-text-inv: var(--vt-c-text-dark-1);
   --section-gap: 160px;
+
+  --color-dark: var(--vt-c-black-soft);
+  --color-light: var(--vt-c-white-soft);
 
   /* FONT DEFAULTS */
   --ff-default: "Josefin Sans";
