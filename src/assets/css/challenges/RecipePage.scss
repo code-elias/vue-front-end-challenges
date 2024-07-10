@@ -56,6 +56,11 @@
   font-family: var(--ff-default);
   line-height: var(--font-spacing);
   color: var(--color-text);
+  background-color: var(--clr-eggshell);
+
+  .main-wrapper {
+    background-color: var(--clr-rose-white);
+  }
 
   .recipe__title {
     font-family: var(--ff-title);
@@ -71,6 +76,10 @@
   }
 }
 
+.header-image {
+  border-radius: 10px;
+}
+
 .recipe {
   padding: 2rem 8%;
   display: flex;
@@ -82,6 +91,10 @@
     animation: titleSlide 600ms ease-in;
     margin-bottom: 1.4rem;
   }
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
 }
 
 /* PREP TIME */
@@ -106,6 +119,18 @@
   }
 }
 
+/* INGREDIENTS */
+.ingredients {
+  &__list {
+    list-style: disc inside;
+  }
+
+  &__item::marker {
+    color: var(--clr-nutmeg);
+    line-height: 2;
+  }
+}
+
 /* INSTRUCTIONS */
 .instructions {
   &__steps {
@@ -116,6 +141,27 @@
     &::marker {
       color: var(--clr-nutmeg);
       font-weight: var(--fw-600);
+    }
+  }
+}
+
+/* NUTRITION */
+.nutrition {
+  &__table {
+    margin-top: 1.5rem;
+  }
+}
+
+/* MEDIA */
+@media only screen and (min-width: 700px) {
+  .main-wrapper {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 1.5rem;
+    border-radius: 15px;
+
+    .recipe {
+      padding: 2rem 0;
     }
   }
 }
