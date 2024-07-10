@@ -41,7 +41,7 @@ onMounted(() => {
       </section>
 
       <section class="prep-time info-block">
-        <h3 class="info-header">Preparation time</h3>
+        <h3 class="info-block__header">Preparation time</h3>
         <ul class="prep-time__list">
           <!-- <li v-for="(element, index) in prepTime" :key="index" class="prep-time__element">
             <strong class="emphasis"> {{ element.Emphasis }} </strong>: {{ element.Text }}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   tightSpacing: {
-    type: bool
+    type: boolean
     default: true
   }
 }>()
