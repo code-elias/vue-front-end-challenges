@@ -14,22 +14,6 @@ import { HomeChallengeCards } from '../data/HomeChallengeCards'
       :cardBgImage="card.BgImg"
       :cardBgPosition="card.BgPosition"
     />
-
-    <!-- <ChallengeCard
-      cardTitle="Blog Preview Card"
-      cardInfo="Challenge to create a Blog Preview Card using HTML and CSS"
-      cardLink="blog-preview-card"
-      cardBgImage="/images/illustration-article.svg"
-      cardBgPosition="top"
-    />
-
-    <ChallengeCard
-      cardTitle="Social links profile"
-      cardInfo="Social link-sharing profile"
-      cardLink="social-links-profile"
-      cardBgImage="/images/social-link-page-preview.png"
-      cardBgPosition="top"
-    /> -->
   </div>
 </template>
 
@@ -44,5 +28,6 @@ import { HomeChallengeCards } from '../data/HomeChallengeCards'
   justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
+  padding: 3rem 0;
 }
 </style>

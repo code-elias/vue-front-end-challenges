@@ -27,6 +27,8 @@
 }
 
 :root {
+  --clr-accent-orange: rgb(248, 170, 79);
+
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-soft-1: rgb(248, 248, 248, .9);
@@ -67,6 +69,8 @@
 
 /* semantic color variables for this project */
 :root {
+  --color-accent: var(--clr-accent-orange);
+
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);

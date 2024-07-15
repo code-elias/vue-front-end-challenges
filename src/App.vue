@@ -34,10 +34,14 @@ watch(
   () => route.name,
   (newRouteName) => {
     // console.log(newRouteName)
-    isChallengePreviewPage.value = newRouteName !== 'home'
+    isChallengePreviewPage.value = isChallengeRoute(newRouteName)
     toggleBtnForcedTheme.value = defaultToggleBtnColor
   }
 )
+
+function isChallengeRoute(routeName: any) {
+  return routeName !== 'home' && routeName !== 'about'
+}
 </script>
 
 <template>
@@ -45,11 +49,11 @@ watch(
     <header class="header" :class="{ hidden: !headerOpen }">
       <div class="header-main">
         <div class="header-logo img-container">
-          <img src="./assets/elias-logo.png" alt="Elias Codes Logo" />
+          <img src="./assets/codeElias-logo.png" alt="Elias Codes Logo" />
         </div>
         <div class="header-title">
           <h1 class="title">FrontEnd Mentor Challenges</h1>
-          <p class="subtitle">by Elias Codes</p>
+          <p class="subtitle">by Elias | Software Engineer & UI/UX Developer</p>
         </div>
       </div>
 
@@ -57,12 +61,7 @@ watch(
     </header>
 
     <main>
-      <ToggleHeaderBtn
-        @toggleHeader="toggleHeader"
-        :headerOpen="headerOpen"
-        :btn-color="toggleBtnForcedTheme"
-        v-show="isChallengePreviewPage"
-      />
+      <ToggleHeaderBtn @toggleHeader="toggleHeader" :headerOpen="headerOpen" :btn-color="toggleBtnForcedTheme" v-show="isChallengePreviewPage" />
       <RouterView @showHeader="showHeader" @setHeaderToggleColor="setHeaderToggleColor" />
     </main>
   </div>
@@ -116,7 +115,7 @@ main {
 .header-title {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.1rem;
 }
 
 .title {
