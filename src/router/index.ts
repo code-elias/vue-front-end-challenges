@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { challengeRoutes } from '../data/ChallengeRoutes'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,21 +23,7 @@ const router = createRouter({
       name: 'test',
       component: () => import('../views/TestView.vue')
     },
-    {
-      path: '/blog-preview-card',
-      name: 'blog-preview-card',
-      component: () => import('../views/challenges/BlogPreviewCardView.vue')
-    },
-    {
-      path: '/social-links-profile',
-      name: 'social-links-profile',
-      component: () => import('../views/challenges/SocialLinksProfileView.vue')
-    },
-    {
-      path: '/recipe-page',
-      name: 'recipe-page',
-      component: () => import('../views/challenges/RecipePageView.vue')
-    }
+    ...challengeRoutes
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
