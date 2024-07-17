@@ -1,10 +1,14 @@
 <script setup lang="ts">
-defineProps<{
-  tightSpacing: {
-    type: boolean
-    default: true
+import { defineProps, withDefaults } from 'vue'
+
+withDefaults(
+  defineProps<{
+    tightSpacing?: boolean
+  }>(),
+  {
+    tightSpacing: true
   }
-}>()
+)
 </script>
 
 <template>

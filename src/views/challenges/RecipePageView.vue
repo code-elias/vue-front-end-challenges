@@ -6,10 +6,10 @@ import ListItem from '../../components/recipe-page/ListItem.vue'
 import NutritionValue from '../../components/recipe-page/NutritionValue.vue'
 
 // Data
-import { prepTime } from '../../data/RecipePage/PrepTime.ts'
-import { instructions } from '../../data/RecipePage/Instructions.ts'
-import { ingredients } from '../../data/RecipePage/Ingredients.ts'
-import { nutritionValues } from '../../data/RecipePage/NutritionValues.ts'
+import { prepTime } from '../../data/RecipePage/PrepTime'
+import { instructions } from '../../data/RecipePage/Instructions'
+import { ingredients } from '../../data/RecipePage/Ingredients'
+import { nutritionValues } from '../../data/RecipePage/NutritionValues'
 
 const emit = defineEmits<{
   showHeader: [show: boolean]
@@ -34,9 +34,8 @@ onMounted(() => {
           <div class="hero__info">
             <h2 class="recipe__title">Simple Omelette Recipe</h2>
             <p class="recipe__summary">
-              An easy and quick dish, perfect for any meal. This classic omelette combines beaten
-              eggs cooked to perfection, optionally filled with your choice of cheese, vegetables,
-              or meats.
+              An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection,
+              optionally filled with your choice of cheese, vegetables, or meats.
             </p>
           </div>
         </section>
@@ -85,9 +84,7 @@ onMounted(() => {
 
         <section class="nutrition">
           <h3 class="section-header">Nutrition</h3>
-          <p>
-            The table below shows nutritional values per serving without the additional fillings.
-          </p>
+          <p>The table below shows nutritional values per serving without the additional fillings.</p>
 
           <!-- Find how to style this place -->
           <div class="nutrition__table">
