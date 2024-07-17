@@ -15,7 +15,7 @@ function closeSideBar() {
 
 <template>
   <div class="wrapper">
-    <div class="collapse-menu">
+    <div class="collapse-menu" :class="{ active: isActive }">
       <button class="navbar-menu-btn pointer" :class="{ active: isActive }" @click="toggle">
         <span class="top line"></span>
         <span class="middle line"></span>
@@ -54,8 +54,10 @@ function closeSideBar() {
 }
 
 .collapse-menu {
-  position: fixed;
-  z-index: 100;
+  &.active {
+    position: fixed;
+    z-index: 100;
+  }
 }
 
 .navbar-menu-btn {
@@ -65,9 +67,6 @@ function closeSideBar() {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  position: relative;
-  z-index: 101;
 
   height: calc(var(--btn-size) + 2 * var(--btn-padding));
   padding: var(--btn-padding);
@@ -91,6 +90,9 @@ function closeSideBar() {
 
   /* ACTIVE */
   &.active {
+    position: relative;
+    z-index: 101;
+
     .line {
       background: var(--color-accent);
     }
@@ -125,7 +127,7 @@ function closeSideBar() {
   display: flex;
   flex-direction: column;
 
-  background: linear-gradient(-90deg, var(--vt-c-white-soft) 10%, var(--vt-c-white-soft-1) 85%, transparent);
+  background: linear-gradient(-90deg, var(--vt-c-white-soft) 0%, var(--vt-c-white-soft-1));
   opacity: 0;
 
   transition:
