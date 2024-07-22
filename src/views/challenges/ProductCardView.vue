@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="challenge">Product Card View</div>
+  <div class="challenge"><div class="card">qweqwe</div></div>
 </template>
 
 <style lang="scss">

@@ -44,18 +44,16 @@ $card-border-radius: 16px;
 }
 
 .card {
-  --color-bg: $clr-white;
-  --banner-height: $card-banner-h-s;
-
   width: 90%;
   max-width: $card-size-s;
-
-  background-color: var(--color-bg);
+  min-height: 400px;
+  border-radius: $card-border-radius;
+  background-color: $clr-white;
 
   &__banner {
     overflow: hidden;
     width: 100%;
-    height: var(--banner-height);
+    height: $card-banner-h-s;
 
     &__img {
       width: 100%;
