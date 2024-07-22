@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+/* FONT */
+$ff-title: 'Fraunces', serif;
+$ff-default: 'Montserrat', serif;
+$fw-default: 400;
+$fw-bold: 700;
+$fs-default: 14px;
+
+$font-spacing: 1.6;
+
+/* THEME */
+$clr-dark-blue: hsl(212, 21%, 14%);
+$clr-dark-gray: hsl(228, 12%, 48%);
+$clr-white: hsl(0, 0%, 100%);
+$clr-cream: hsl(26, 40%, 92%);
+$clr-green: hsl(158, 36%, 37%);
+
+/* CARD */
+$card-size-s: 345px;
+$card-size-l: 604px;
+$card-banner-h-s: 245px;
+$card-padding-s: 1.75rem;
+$card-padding-l: 2rem;
+$card-border-radius: 16px;
+
+.challenge {
+  font-family: $ff-default;
+  font-weight: $fw-default;
+  font-size: $fs-default;
+  color: $clr-dark-blue;
+  line-height: $font-spacing;
+}
+
+.challenge {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $clr-cream;
+  min-height: 100vh;
+}
+
+.card {
+  --color-bg: $clr-white;
+  --banner-height: $card-banner-h-s;
+
+  width: 90%;
+  max-width: $card-size-s;
+
+  background-color: var(--color-bg);
+
+  &__banner {
+    overflow: hidden;
+    width: 100%;
+    height: var(--banner-height);
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
