@@ -19,6 +19,7 @@ $clr-dark-gray: hsl(228, 12%, 48%);
 $clr-white: hsl(0, 0%, 100%);
 $clr-cream: hsl(26, 40%, 92%);
 $clr-green: hsl(158, 36%, 37%);
+$clr-dark-green: hsl(156, 42%, 18%);
 
 /* CARD */
 $card-size-s: 345px;
@@ -46,13 +47,17 @@ $card-flow: 1rem;
   font-weight: $fw-bold;
   line-height: 1;
 }
-//#endregion Mixins
 
-.challenge {
-  flex: 1;
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+//#endregion Mixins
+
+.challenge {
+  @include flex-center;
+  flex: 1;
 
   background-color: $clr-cream;
   min-height: 100vh;
@@ -144,6 +149,22 @@ $card-flow: 1rem;
       &__icon {
         font-size: 1.4rem;
         vertical-align: middle; // Align Text and Icon
+      }
+
+      // Hover and transitions
+      transition:
+        background-color 200ms ease-in-out,
+        border-radius 250ms ease-in-out;
+
+      &:hover {
+        background-color: $clr-dark-green;
+        border-radius: 100px;
+      }
+
+      &:focus {
+        outline: 2px solid $clr-green;
+        outline-offset: 2px;
+        border-radius: 100px;
       }
     }
   }
