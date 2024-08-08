@@ -6,7 +6,7 @@ export const HomeChallengeCards = [
     'A prototype for a section of a page that showcases features of a product',
     'feature-section',
     'FeatureSectionView',
-    '/images/illustration-article.svg',
+    '/images/feature-section-screenshot.png',
     'center'
   ),
   new ChallengeCard(

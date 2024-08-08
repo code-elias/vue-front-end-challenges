@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="challenge">
+  <div class="challenge-product-card">
     <div class="card">
       <div class="card__banner">
         <img
@@ -37,7 +37,8 @@ onMounted(() => {
 
         <div class="card__body flow">
           <p class="card__body__content">
-            A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.
+            A floral, solar and voluptuous interpretation composed by Olivier Polge,
+            Perfumer-Creator for the House of CHANEL.
           </p>
           <div class="card__body__price-tag">
             <p class="card__body__price-tag__discount text-green">$149.99</p>
@@ -57,7 +58,10 @@ onMounted(() => {
     </div>
 
     <div class="attribution">
-      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      </p>
       <p>Coded by <a href="#">@CodeElias (Elias)</a>.</p>
     </div>
   </div>

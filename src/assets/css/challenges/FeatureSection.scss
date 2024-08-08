@@ -51,7 +51,7 @@ $font-spacing: 1.6;
 $bg-color: $very-light-gray;
 
 $challenge-padding-x: 1rem;
-$challenge-padding-y: 6rem;
+$challenge-padding-y: 4rem;
 
 $container-min-w: 250px;
 $container-w: 90%;
@@ -225,7 +225,7 @@ $card-img-h: 100px;
 }
 
 /* CHALLENGE */
-.challenge {
+.challenge-feature-section {
   @include font-regular;
   @include font-size-main;
 
@@ -234,12 +234,13 @@ $card-img-h: 100px;
   background-color: $bg-color;
   min-height: 100vh;
   padding: $challenge-padding-y $challenge-padding-x;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  gap: $challenge-padding-y;
+  // gap: $challenge-padding-y;
 
   //#region Header
   .header {
@@ -249,6 +250,7 @@ $card-img-h: 100px;
     @include flex-col-center;
     text-align: center;
     gap: $gap;
+    margin-bottom: $challenge-padding-y;
 
     &__first-container {
       display: flex;
@@ -355,8 +357,23 @@ $card-img-h: 100px;
   //#endregion Card container
 }
 
-//#region Card
+//#region Media Queries
+@media only screen and (min-width: 700px) {
+  .challenge-feature-section {
+    .card-container {
+      flex-direction: row;
+
+      .card {
+        width: 30vw;
+        max-width: $card-max-w;
+      }
+    }
+  }
+}
+//#endregion Media Queries
+
+//#region TEST
 .test-bg {
   background-color: hsla(0, 100%, 50%, 0.274) !important;
 }
-//#endregion Card
+//#endregion TEST

@@ -32,7 +32,7 @@ $card-btn-border-radius: 10px;
 $card-btn-padding: 1.2rem;
 $card-flow: 1rem;
 
-.challenge {
+.challenge-product-card {
   font-family: $ff-default;
   font-weight: $fw-default;
   font-size: $fs-default;
@@ -55,7 +55,7 @@ $card-flow: 1rem;
 }
 //#endregion Mixins
 
-.challenge {
+.challenge-product-card {
   @include flex-center;
   flex: 1;
 
