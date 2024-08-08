@@ -12,7 +12,7 @@ $fs-4: 15px;
 $fs-5: 18px;
 $fs-6: 20px;
 $fs-7: 24px;
-$fs-8: 30px;
+$fs-8: 32px;
 
 $fw-base: 400;
 
@@ -42,20 +42,41 @@ $very-light-gray: hsl(0, 0%, 98%);
 $clr-black: hsl(0, 0%, 7%);
 $clr-white: hsl(0, 0%, 100%);
 $clr-cream: hsl(26, 40%, 92%);
-$clr-slate: #252729;
+$clr-slate: hsl(210, 5%, 15%);
+$clr-slate-light: hsl(210, 5%, 30%);
 
 /* Global Variables */
 $font-color: $clr-slate;
 $font-spacing: 1.6;
 $bg-color: $very-light-gray;
 
+$challenge-padding: 1rem;
+
 $container-min-w: 250px;
 $container-w: 90%;
 $container-max-w: 650px;
+$container-padding: 32px;
+
+$card-h: 250px;
+$card-max-w: 352px;
+$card-w: 100%;
+$card-min-w: 240px;
+$card-radius: 10px;
+$card-padding: 32px;
+
+$card-img-h: 70px;
 
 //#region Mixins
 
 //#region Font Mixins
+@mixin font-size-title {
+  font-size: clamp($fs-6, 3vw, $fs-8);
+}
+
+@mixin font-size-main {
+  font-size: clamp($fs-3, 0.5rem + 0.75rem, $fs-base);
+}
+
 @mixin font-thin {
   font-family: $ff-main, sans-serif;
   font-weight: 100;
@@ -184,7 +205,7 @@ $container-max-w: 650px;
 
 /* Generic */
 .container {
-  padding: 0 1rem;
+  padding: 0 $container-padding;
   width: clamp($container-min-w, $container-w, $container-max-w);
 }
 
@@ -199,18 +220,34 @@ $container-max-w: 650px;
 /* CHALLENGE */
 .challenge {
   @include font-regular;
+  @include font-size-main;
 
-  font-size: $fs-base;
   color: $font-color;
   line-height: $font-spacing;
   background-color: $bg-color;
   min-height: 100vh;
+  padding: $challenge-padding;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
   //#region Header
   .header {
-    $fs-title: $fs-6;
+    $gap: 1rem;
+
+    @include font-size-title;
+    @include flex-col-center;
+    text-align: center;
+    gap: $gap;
+
+    &__first-container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     &__title {
-      @include font-semibold;
+      @include font-medium;
       font-size: $fs-title;
     }
 
@@ -220,7 +257,8 @@ $container-max-w: 650px;
     }
 
     &__body {
-      @include font-regular;
+      @include font-extralight;
+      @include font-size-main;
       text-align: center;
     }
   }
@@ -229,10 +267,11 @@ $container-max-w: 650px;
   //#region Card container
   .card-container {
     // Gap
-    $gap: 15px;
+    $gap-s: 28px;
+    $gap-l: 28px;
 
     @include flex-center;
-    gap: $gap;
+    gap: $gap-s;
 
     &__1,
     &__3 {
@@ -241,14 +280,18 @@ $container-max-w: 650px;
 
     &__2 {
       @include flex-col-center;
-      gap: $gap;
+      gap: $gap-s;
     }
 
     .card {
-      // Width and Height fixed
-      // Padding
-      // Shadows
-      // Border Radius
+      min-height: $card-h;
+      width: 100%;
+      max-width: $card-max-w;
+
+      padding: $card-padding;
+
+      box-shadow: 0px 10px 15px -3px $grayish-blue;
+      border-radius: $card-radius;
 
       //#region Border Color
       &__blue {
@@ -273,14 +316,14 @@ $container-max-w: 650px;
       }
 
       &__body {
-        // Font
+        color: $clr-slate-light;
       }
 
       &__icon {
         display: flex;
 
         &__img {
-          // Fixed width and height
+          max-height: $card-img-h;
         }
       }
     }

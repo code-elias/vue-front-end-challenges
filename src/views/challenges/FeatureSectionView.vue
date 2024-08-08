@@ -1,13 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import FeaturesCards from '@/components/feature-section/FeaturesCards.vue'
+import FeaturesHeader from '@/components/feature-section/FeaturesHeader.vue'
+</script>
 
 <template>
   <div class="challenge">
-    <!-- Header -->
-    <!-- Body -->
-    <!-- Card -->
+    <FeaturesHeader />
+    <FeaturesCards />
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../../assets/css/challenges/FeatureSection.scss';
 </style>
