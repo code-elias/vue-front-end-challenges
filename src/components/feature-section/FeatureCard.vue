@@ -1,11 +1,15 @@
 <script lang="ts" setup>
-import TeamBuilderIcon from './icons/TeamBuilderIcon.vue'
+import { computed } from 'vue'
+import { featureIcons } from '@/data/FeatureSection/FeatureIcons'
 
-defineProps<{
+const props = defineProps<{
   title: string
   body: string
   topBorder: string
+  icon: string
 }>()
+
+const currentIcon = computed(() => featureIcons[props.icon] || null)
 </script>
 
 <template>
@@ -19,7 +23,7 @@ defineProps<{
     </div>
 
     <footer class="card__icon">
-      <TeamBuilderIcon />
+      <component :is="currentIcon" />
     </footer>
   </div>
 </template>

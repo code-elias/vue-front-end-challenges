@@ -50,22 +50,24 @@ $font-color: $clr-slate;
 $font-spacing: 1.6;
 $bg-color: $very-light-gray;
 
-$challenge-padding: 1rem;
+$challenge-padding-x: 1rem;
+$challenge-padding-y: 6rem;
 
 $container-min-w: 250px;
 $container-w: 90%;
 $container-max-w: 650px;
 $container-padding: 32px;
 
-$card-h: 250px;
-$card-max-w: 352px;
+$card-h-s: 250px;
+$card-h-l: 200px;
+$card-max-w: 330px;
 $card-w: 100%;
-$card-min-w: 240px;
+$card-min-w: 260px;
 $card-radius: 10px;
 $card-padding: 32px;
 $card-top-border-w: 6px;
 
-$card-img-h: 70px;
+$card-img-h: 100px;
 
 //#region Mixins
 
@@ -231,12 +233,13 @@ $card-img-h: 70px;
   line-height: $font-spacing;
   background-color: $bg-color;
   min-height: 100vh;
-  padding: $challenge-padding;
+  padding: $challenge-padding-y $challenge-padding-x;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  gap: $challenge-padding-y;
 
   //#region Header
   .header {
@@ -276,7 +279,7 @@ $card-img-h: 70px;
     $gap-s: 28px;
     $gap-l: 28px;
 
-    @include flex-center;
+    @include flex-col-center;
     gap: $gap-s;
 
     &__1,
@@ -290,9 +293,8 @@ $card-img-h: 70px;
     }
 
     .card {
-      min-height: $card-h;
-      width: 100%;
-      max-width: $card-max-w;
+      min-height: $card-h-s;
+      width: clamp($card-min-w, 85vw, $card-max-w);
 
       padding: $card-padding;
 
@@ -330,6 +332,7 @@ $card-img-h: 70px;
         @include font-light;
         @include font-size-small;
         color: $clr-slate-light;
+        margin-top: 0.7rem;
       }
 
       &__icon {
