@@ -1,4 +1,4 @@
-import { ChallengeCard } from '../models/ChallengeCard'
+import { ChallengeCard } from '@/models/ChallengeCard'
 
 export const HomeChallengeCards = [
   new ChallengeCard(
