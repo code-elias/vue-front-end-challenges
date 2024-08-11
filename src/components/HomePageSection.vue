@@ -1,15 +1,10 @@
 <script setup lang="ts">
 import type { HomeSection } from '@/models/HomeSection'
 import ChallengeCard from '@/components/ChallengeCard.vue'
-import { onMounted } from 'vue'
 
 const props = defineProps<{
   section: HomeSection
 }>()
-
-onMounted(() => {
-  console.log(props.section)
-})
 </script>
 
 <template>

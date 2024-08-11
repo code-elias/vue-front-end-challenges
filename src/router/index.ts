@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { challengeRoutes } from '../data/ChallengeRoutes'
+import { sandboxRoutes } from '@/data/SandboxRoutes'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,7 +24,8 @@ const router = createRouter({
       name: 'test',
       component: () => import('../views/TestView.vue')
     },
-    ...challengeRoutes
+    ...challengeRoutes,
+    ...sandboxRoutes
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

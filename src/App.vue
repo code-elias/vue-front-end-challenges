@@ -21,9 +21,9 @@ function toggleHeader() {
 function showHeader(show: boolean) {
   if (isChallengePreviewPage.value) {
     headerOpen.value = show
-    return
+  } else {
+    headerOpen.value = true
   }
-  headerOpen.value = true
 }
 
 function setHeaderToggleColor(color: string) {
@@ -39,7 +39,8 @@ watch(
 )
 
 function isChallengeRoute(routeName: any) {
-  return routeName !== 'home' && routeName !== 'about'
+  const baseRoutes = ['home', 'about']
+  return !baseRoutes.includes(routeName) && !routeName.includes('sandbox')
 }
 </script>
 
@@ -93,6 +94,7 @@ main {
   justify-content: space-between;
   position: relative;
   max-height: 300px;
+  min-height: var(--min-header-h);
   transition: max-height 600ms ease-in-out;
 }
 
