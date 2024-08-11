@@ -21,9 +21,9 @@ function toggleHeader() {
 function showHeader(show: boolean) {
   if (isChallengePreviewPage.value) {
     headerOpen.value = show
-    return
+  } else {
+    headerOpen.value = true
   }
-  headerOpen.value = true
 }
 
 function setHeaderToggleColor(color: string) {
@@ -33,14 +33,14 @@ function setHeaderToggleColor(color: string) {
 watch(
   () => route.name,
   (newRouteName) => {
-    // console.log(newRouteName)
     isChallengePreviewPage.value = isChallengeRoute(newRouteName)
     toggleBtnForcedTheme.value = defaultToggleBtnColor
   }
 )
 
 function isChallengeRoute(routeName: any) {
-  return routeName !== 'home' && routeName !== 'about'
+  const baseRoutes = ['home', 'about']
+  return !baseRoutes.includes(routeName) && !routeName.includes('sandbox')
 }
 </script>
 
@@ -52,7 +52,11 @@ function isChallengeRoute(routeName: any) {
           <img src="./assets/codeElias-logo.png" alt="Elias Codes Logo" />
         </div>
         <div class="header-title">
+<<<<<<< HEAD
           <h1 class="title">FrontEnd Challenges</h1>
+=======
+          <h1 class="title">UI/UX Designs</h1>
+>>>>>>> develop
           <p class="subtitle">by Elias | Software Engineer & UI/UX Developer</p>
         </div>
       </div>
@@ -94,6 +98,7 @@ main {
   justify-content: space-between;
   position: relative;
   max-height: 300px;
+  min-height: var(--min-header-h);
   transition: max-height 600ms ease-in-out;
 }
 
@@ -121,7 +126,7 @@ main {
 .header-title {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.05rem;
 }
 
 .title {

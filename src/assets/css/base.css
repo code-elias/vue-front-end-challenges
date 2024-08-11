@@ -90,6 +90,9 @@
   --ff-default: "Josefin Sans";
   --fw-default: var(--fw-4);
   --fs-default: var(--fs-3);
+
+  /* GLOBAL */
+  --min-header-h: 90px;
 }
 
 /* 

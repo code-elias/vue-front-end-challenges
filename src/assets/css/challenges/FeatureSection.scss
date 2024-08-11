@@ -1,0 +1,379 @@
+// Font: Poppins (https://fonts.google.com/specimen/Poppins)
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* FONT */
+$ff-main: 'Poppins';
+
+$fs-base: 15px;
+$fs-1: 8px;
+$fs-2: 10px;
+$fs-3: 12px;
+$fs-4: 15px;
+$fs-5: 18px;
+$fs-6: 20px;
+$fs-7: 24px;
+$fs-8: 32px;
+
+$fw-base: 400;
+
+$ff-title: 'Poppins', sans-serif;
+$ff-default: 'Poppins', Helvetica, Arial, sans-serif;
+$fw-default: 500;
+$fw-bold: 800;
+$fs-title: 20px;
+$fs-default: 15px;
+$fs-small: 12px;
+
+/* SIZE */
+
+/* COLOR */
+// Primary
+$clr-red: hsl(0, 78%, 62%);
+$clr-cyan: hsl(180, 62%, 55%);
+$clr-orange: hsl(34, 97%, 64%);
+$clr-blue: hsl(212, 86%, 64%);
+
+// Neutrals
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+// Base
+$clr-black: hsl(0, 0%, 7%);
+$clr-white: hsl(0, 0%, 100%);
+$clr-cream: hsl(26, 40%, 92%);
+$clr-slate: hsl(210, 5%, 15%);
+$clr-slate-light: hsl(210, 5%, 30%);
+
+/* Global Variables */
+$font-color: $clr-slate;
+$font-spacing: 1.6;
+$bg-color: $very-light-gray;
+
+$challenge-padding-x: 1rem;
+$challenge-padding-y: 4rem;
+
+$container-min-w: 250px;
+$container-w: 90%;
+$container-max-w: 650px;
+$container-padding: 32px;
+
+$card-h-s: 250px;
+$card-h-l: 200px;
+$card-max-w: 330px;
+$card-w: 100%;
+$card-min-w: 260px;
+$card-radius: 10px;
+$card-padding: 32px;
+$card-top-border-w: 6px;
+
+$card-img-h: 100px;
+
+//#region Mixins
+
+//#region Font Mixins
+@mixin font-size-title {
+  font-size: clamp($fs-6, 3vw, $fs-8);
+}
+
+@mixin font-size-main {
+  font-size: clamp($fs-3, 0.5rem + 0.75rem, $fs-base);
+}
+
+@mixin font-size-small {
+  font-size: clamp($fs-2, 0.5rem + 0.5rem, $fs-3);
+}
+
+@mixin font-thin {
+  font-family: $ff-main, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@mixin font-extralight {
+  font-family: $ff-main, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin font-light {
+  font-family: $ff-main, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin font-regular {
+  font-family: $ff-main, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin font-medium {
+  font-family: $ff-main, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin font-semibold {
+  font-family: $ff-main, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin font-bold {
+  font-family: $ff-main, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin font-extrabold {
+  font-family: $ff-main, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@mixin font-black {
+  font-family: $ff-main, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@mixin font-thin-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+@mixin font-extralight-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+@mixin font-light-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@mixin font-regular-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin font-medium-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@mixin font-semibold-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+@mixin font-bold-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@mixin font-extrabold-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@mixin font-black-italic {
+  font-family: $ff-main, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+//#endregion Font Mixins
+
+//#region Flex Mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+//#endregion Flex Mixin
+
+//#endregion Mixins
+
+/* Generic */
+.container {
+  padding: 0 $container-padding;
+  width: clamp($container-min-w, $container-w, $container-max-w);
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.flex-col-center {
+  @include flex-col-center;
+}
+
+/* CHALLENGE */
+.challenge-feature-section {
+  @include font-regular;
+  @include font-size-main;
+
+  color: $font-color;
+  line-height: $font-spacing;
+  background-color: $bg-color;
+  min-height: 100vh;
+  padding: $challenge-padding-y $challenge-padding-x;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  // gap: $challenge-padding-y;
+
+  //#region Header
+  .header {
+    $gap: 1rem;
+
+    @include font-size-title;
+    @include flex-col-center;
+    text-align: center;
+    gap: $gap;
+    margin-bottom: $challenge-padding-y;
+
+    &__first-container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__title {
+      @include font-medium;
+      font-size: $fs-title;
+    }
+
+    &__subtitle {
+      @include font-thin;
+      font-size: $fs-title;
+    }
+
+    &__body {
+      @include font-extralight;
+      @include font-size-main;
+      text-align: center;
+    }
+  }
+  //#endregion Header
+
+  //#region Card container
+  .card-container {
+    // Gap
+    $gap-s: 28px;
+    $gap-l: 28px;
+
+    @include flex-col-center;
+    gap: $gap-s;
+
+    &__1,
+    &__3 {
+      @include flex-center;
+    }
+
+    &__2 {
+      @include flex-col-center;
+      gap: $gap-s;
+    }
+
+    .card {
+      min-height: $card-h-s;
+      width: clamp($card-min-w, 85vw, $card-max-w);
+
+      padding: $card-padding;
+
+      box-shadow: 0px 10px 15px -3px $grayish-blue;
+      border-radius: $card-radius;
+      border-top: $card-top-border-w solid transparent;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      //#region Border Color
+      &.blue {
+        border-color: $clr-blue;
+      }
+
+      &.red {
+        border-color: $clr-red;
+      }
+
+      &.orange {
+        border-color: $clr-orange;
+      }
+
+      &.cyan {
+        border-color: $clr-cyan;
+      }
+      //#endregion Border Color
+
+      &__title {
+        @include font-medium;
+      }
+
+      &__body {
+        @include font-light;
+        @include font-size-small;
+        color: $clr-slate-light;
+        margin-top: 0.7rem;
+      }
+
+      &__icon {
+        display: flex;
+        justify-content: flex-end;
+
+        &__img {
+          overflow: hidden;
+          max-height: $card-img-h;
+
+          &img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  //#endregion Card container
+}
+
+//#region Media Queries
+@media only screen and (min-width: 700px) {
+  .challenge-feature-section {
+    .card-container {
+      flex-direction: row;
+
+      .card {
+        width: 30vw;
+        max-width: $card-max-w;
+      }
+    }
+  }
+}
+//#endregion Media Queries
+
+//#region TEST
+.test-bg {
+  background-color: hsla(0, 100%, 50%, 0.274) !important;
+}
+//#endregion TEST

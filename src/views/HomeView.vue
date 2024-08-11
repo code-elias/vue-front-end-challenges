@@ -1,33 +1,22 @@
 <script setup lang="ts">
-import ChallengeCard from '../components/ChallengeCard.vue'
-import { HomeChallengeCards } from '../data/HomeChallengeCards'
+import ChallengeCard from '@/components/ChallengeCard.vue'
+import HomePageSection from '@/components/HomePageSection.vue'
+// import { HomeChallengeCards } from '@/data/HomeChallengeCards'
+import { homeCards } from '@/data/HomeCards'
 </script>
 
 <template>
-  <div class="wrapper card-container">
-    <ChallengeCard
-      v-for="(card, index) in HomeChallengeCards"
-      :key="index"
-      :cardTitle="card.Title"
-      :cardInfo="card.Info"
-      :cardLink="card.Link"
-      :cardBgImage="card.BgImg"
-      :cardBgPosition="card.BgPosition"
-    />
+  <div class="wrapper">
+    <HomePageSection v-for="(section, index) in homeCards" :key="index" :section="section" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .wrapper {
   flex: 1;
-}
-
-.card-container {
+  padding: 3rem 0.5rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 3rem;
-  padding: 3rem 0;
 }
 </style>

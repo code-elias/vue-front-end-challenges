@@ -6,7 +6,6 @@ const emit = defineEmits<{
 }>()
 
 onMounted(() => {
-  console.log('On Mounter')
   emit('showHeader', false)
 })
 </script>
