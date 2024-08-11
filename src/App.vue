@@ -52,11 +52,7 @@ function isChallengeRoute(routeName: any) {
           <img src="./assets/codeElias-logo.png" alt="Elias Codes Logo" />
         </div>
         <div class="header-title">
-<<<<<<< HEAD
-          <h1 class="title">FrontEnd Challenges</h1>
-=======
           <h1 class="title">UI/UX Designs</h1>
->>>>>>> develop
           <p class="subtitle">by Elias | Software Engineer & UI/UX Developer</p>
         </div>
       </div>
