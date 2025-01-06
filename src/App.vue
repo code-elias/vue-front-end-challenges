@@ -61,12 +61,12 @@ function isChallengeRoute(routeName: any) {
     </header>
 
     <main>
-      <ToggleHeaderBtn
+      <!-- <ToggleHeaderBtn
         @toggleHeader="toggleHeader"
         :headerOpen="headerOpen"
         :btn-color="toggleBtnForcedTheme"
         v-show="isChallengePreviewPage"
-      />
+      /> -->
       <RouterView @showHeader="showHeader" @setHeaderToggleColor="setHeaderToggleColor" />
     </main>
   </div>
